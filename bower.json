@@ -1,0 +1,8 @@
+{
+  "name": "JailbreakHQ Traditional Static",
+  "version": "0.0.1",
+  "dependencies": {
+    "bower-foundation": "https://github.com/zurb/bower-foundation.git#5.5.0",
+    "slick.js": "~1.4.1"
+  }
+}

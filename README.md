@@ -1,0 +1,2 @@
+# JailbreakHQ Traditional App Static Files
+This is a small project for producing the CSS/JS behind the Traditional JailbreakHQ web application test as part of my comparison of Traditional web apps versus single-page javascript applications.

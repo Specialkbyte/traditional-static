@@ -1,0 +1,109 @@
+//
+// Mixins
+//
+
+@mixin card
+  padding: 7px 10px;
+  border: 1px solid #E6E6E6;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px 0px
+  color: rgb(85, 85, 85)
+  border-width: 1px
+  border-style: solid
+  border-color: rgb(221, 221, 221)
+  border-bottom-color: rgb(187, 187, 187)
+  background: white
+
+@mixin animation($value)
+  -webkit-animation: $value
+  -moz-animation: $value
+  animation: $value 
+  
+@mixin transition($value)
+  -webkit-transition: $value
+  -moz-transition: $value
+  transition: $value
+
+@mixin translateY($value)
+  -webkit-transform: translateY($value);
+  -ms-transform: translateY($value);
+  transform: translateY($value);
+
+@mixin border-radius($radius)
+  -webkit-border-radius:  $radius
+  -moz-border-radius:     $radius
+  -ms-border-radius:      $radius
+  border-radius:          $radius
+
+@mixin text-shadow($value)
+  -moz-text-shadow:    $value
+  -webkit-text-shadow: $value
+  text-shadow:         $value
+
+@mixin box-shadow($value)
+  -moz-box-shadow:    $value
+  -webkit-box-shadow: $value
+  box-shadow:         $value
+
+@mixin inset-box-shadow($value)
+  -moz-box-shadow:    inset $value
+  -webkit-box-shadow: inset $value
+  box-shadow:         inset $value
+
+@mixin background-size-cover
+  -webkit-background-size: cover
+  -moz-background-size:    cover
+  -o-background-size:      cover
+  background-size:         cover
+
+@mixin blur($blur, $grayscale:0.0)
+  -webkit-filter: blur($blur) grayscale($grayscale)
+  -moz-filter: blur($blur) grayscale($grayscale)
+  -o-filter: blur($blur) grayscale($grayscale)
+  -ms-filter: blur($blur) grayscale($grayscale)
+  filter: blur($blur) grayscale($grayscale)
+
+@mixin background-gradient($color1, $color2, $position: 0%)
+  background: $color1
+  background: -moz-linear-gradient(top, $color1 $position, $color2 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($position, $color1), color-stop(100%, $color2)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $color1 $position, $color2 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $color1 $position, $color2 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $color1 $position, $color2 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $color1 $position, $color2 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2', GradientType=0); /* IE6-9 */
+
+
+@mixin horizontal-background-gradient($color1, $color2, $position: 0%)
+  background: $color1
+  background: -moz-linear-gradient(left, $color1 $position, $color2 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop($position, $color1), color-stop(100%, $color2)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $color1 $position, $color2 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, $color1 $position, $color2 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, $color1 $position, $color2 100%); /* IE10+ */
+  background: linear-gradient(to right, $color1 $position, $color2 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color2', GradientType=1); /* IE6-9 */
+
+@mixin border-radius-top-left($radius)
+  -webkit-border-top-left-radius:  $radius
+  -moz-border-top-left-radius:     $radius
+  -ms-border-top-left-radius:      $radius
+  border-top-left-radius:          $radius
+
+@mixin border-radius-bottom-left($radius)
+  -webkit-border-bottom-left-radius:  $radius
+  -moz-border-bottom-left-radius:     $radius
+  -ms-border-bottom-left-radius:      $radius
+  border-bottom-left-radius:          $radius
+  
+@mixin border-radius-top-right($radius)
+  -webkit-border-top-right-radius:  $radius
+  -moz-border-top-right-radius:     $radius
+  -ms-border-top-right-radius:      $radius
+  border-top-right-radius:          $radius
+
+@mixin border-radius-bottom-right($radius)
+  -webkit-border-bottom-right-radius:  $radius
+  -moz-border-bottom-right-radius:     $radius
+  -ms-border-bottom-right-radius:      $radius
+  border-bottom-right-radius:          $radius

@@ -1,0 +1,28 @@
+.main-footer
+  margin-top: 10px
+  padding: 20px 0
+  border-top: 1px solid $jb-light-border
+  color: $secondary-text-color
+
+  ul
+    list-style: none
+    margin-bottom: 15px
+
+    li
+      display: block
+      margin-right: 12px
+      margin-top: 2px
+
+      .hide-link
+        color: $secondary-text-color
+
+@media #{$medium-up}
+  .main-footer
+    ul
+      margin: 0
+
+      li
+        display: inline-block
+
+    ul.footer-right
+      float: right
