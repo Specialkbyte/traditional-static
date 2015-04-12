@@ -4,11 +4,13 @@ $ ->
   addUrlParam = (search, key, val) ->
     newParam = key + '=' + val
     params = '?' + newParam
-    # Try to replace an existance instance
-    params = search.replace(new RegExp('[?&]' + key + '[^&]*'), '&' + newParam)
-    # If nothing was replaced, then add the new param to the end
-    if params == search
-      params += '&' + newParam
+    # If the "search" string exists, then build params from it
+    if search
+      # Try to replace an existance instance
+      params = search.replace(new RegExp('([\?&])' + key + '[^&]*'), '$1' + newParam)
+      # If nothing was replaced, then add the new param to the end
+      if params == search
+        params += '&' + newParam
 
     params
 
@@ -30,13 +32,15 @@ $ ->
 
   $('#university').change ->
     value = $(this).val()
-    console.log value
     if value == "ALL"
-      window.location = removeURLParam(window.location.href, 'university')
+      url = removeURLParam window.location.href, 'university'
+      window.location = removeURLParam url, 'page' # reset pagination when changing filters
     else
       newUrl = document.location.pathname + addUrlParam document.location.search, 'university', value
+      newUrl = removeURLParam newUrl, 'page' # reset pagination
       window.location = newUrl
 
   $('#order-by').change ->
     value = $(this).val()
-    window.location = document.location.pathname + addUrlParam document.location.search, 'orderBy', value
+    newUrl = document.location.pathname + addUrlParam document.location.search, 'orderBy', value
+    window.location = removeURLParam newUrl, 'page' # reset pagination
