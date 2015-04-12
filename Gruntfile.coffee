@@ -46,7 +46,10 @@ module.exports = (grunt) ->
     uglify:
       deploy:
         files:
-          "<%= paths.deploy %>/scripts/main.js": ["<%= paths.deploy %>/scripts/main.js"]
+          "<%= paths.deploy %>/scripts/components.js": ["<%= paths.build %>/scripts/components.js"]
+          "<%= paths.deploy %>/scripts/index.js": ["<%= paths.build %>/scripts/index.js"]
+          "<%= paths.deploy %>/scripts/teams.js": ["<%= paths.build %>/scripts/teams.js"]
+          "<%= paths.deploy %>/scripts/slick.js": ["<%= paths.build %>/scripts/slick.js"]
     
     ##
     ## Watcher Configuation
